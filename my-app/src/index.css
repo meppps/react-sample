@@ -48,3 +48,19 @@ ol, ul {
 .game-info {
   margin-left: 20px;
 }
+/* 
+
+.square {
+  background: #b35252;
+  border: 1px solid #eaeaea;
+  float: left;
+  font-size: 111px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 142px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 142px;
+} */
