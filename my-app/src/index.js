@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, { render } from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -15,6 +15,13 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// Nav component?
+function Welcome() {
+  return <nav><h1>Tic-Tac-Toe</h1></nav>;
+}
+
+const element = <Welcome name = 'John' />;
 
 
 // Square component ==============
@@ -120,7 +127,7 @@ class Game extends React.Component {
       'Go to game start';
       return(
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button class="stepButton" onClick={() => this.jumpTo(move)}>{desc}</button>
         </li>
       );
     });
@@ -142,7 +149,7 @@ class Game extends React.Component {
            />
         </div>
         <div className="game-info">
-          <div>{status}</div>
+          <h3>{status}</h3>
           <ol>{moves}</ol>
         </div>
       </div>
@@ -152,9 +159,15 @@ class Game extends React.Component {
 
 // ========================================
 
+
 ReactDOM.render(
   <Game />,
   document.getElementById('root')
+);
+
+ReactDOM.render(
+  element,
+  document.getElementById('navbar')
 );
 
 function calculateWinner(squares) {
